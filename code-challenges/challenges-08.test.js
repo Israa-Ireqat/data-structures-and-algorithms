@@ -9,6 +9,18 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...
+  let stingArray = str.split('');
+  let myArray = [];
+  let index;
+  if (stingArray.length < 10) {
+    index = 0;
+  } else {
+    index = stingArray.length - 10;
+  }
+  for (let i = index; i < stingArray.length; i++) {
+    myArray.push(stingArray[i]);
+  }
+  return myArray;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,6 +33,12 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
+  let numberArray = arr.filter(val => {
+    if (typeof val === 'number') {
+      return true;
+    }
+  })
+  return numberArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,6 +51,13 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+  let numberArray = arr.filter(val => {
+    let regix = /(and)/g;
+    if (regix.test(val)) {
+      return true;
+    }
+  })
+  return numberArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,6 +70,12 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let numberArray = arr.filter(value => {
+    if (value % 2 === 1) {
+      return true;
+    }
+  })
+  return numberArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,6 +91,13 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let myArray = arr.filter(value => {
+    let regix = /[a, e, i, o, u]/g;
+    if (regix.test(value)) {
+      return true;
+    }
+  })
+  return myArray;
 };
 
 
@@ -73,6 +111,12 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let myArray = arr.filter(value => {
+    if (!(forbiddenValues.includes(value))) {
+      return true;
+    }
+  })
+  return myArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
