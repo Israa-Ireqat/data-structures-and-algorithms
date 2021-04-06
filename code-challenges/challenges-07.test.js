@@ -8,6 +8,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
+  return string.replace(/0/g,'zero');
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
+  return arr.map((item) => item + 1);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,6 +30,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
+  return arr.map((item) => `${item}?`);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,6 +45,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  let myArray = [];
+  for(let item of arr){
+    myArray.push(Math.pow(2, item));
+  }
+  return myArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +60,9 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let myArray = [];
+  arr.forEach(item => myArray.push(Math.pow(2, item)));
+  return myArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,6 +73,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  return arr.map(item => Math.pow(2, item));
 };
 
 /* ------------------------------------------------------------------------------------------------
