@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
-
+//Done
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
 ------------------------------------------------------------------------------------------------ */
 
