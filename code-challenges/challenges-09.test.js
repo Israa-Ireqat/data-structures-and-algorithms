@@ -2,7 +2,6 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
-//will start soon
 Write a function named transformToLis that, given an object, returns an array of the key value pairs as html list items.
 
 For example: 
@@ -20,6 +19,8 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+  let myArray= Object.entries(obj).map(element => `<li>${element}</li>`);
+  return myArray.map(ele => ele.replace(',',': '));
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,6 +32,11 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
+  let myArray = arr.reduce((acc,value,idx)=>{
+    acc+=value
+    return acc;
+  },0);
+  return myArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +53,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+  let myArray = arr.reduce((acc,value,idx)=>{
+    acc+=value.purchasePrice;
+    return acc
+  },0);
+  return myArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,6 +70,11 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  let myCounter = arr.reduce((acc,value,index)=>{
+    acc+=1;
+    return acc
+  },0);
+  return myCounter;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,6 +135,10 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let Names=[]
+  arr.reduce((a, value) => {
+    return Names.push(value.name)},[]);
+  return Names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,6 +151,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  let myArray = str.split('');
+  const revString = myArray.reduce((acc, val, idx) => {
+    return acc += myArray[myArray.length - idx - 1];
+  }, '');
+  return revString;
 };
 
 /* ------------------------------------------------------------------------------------------------
