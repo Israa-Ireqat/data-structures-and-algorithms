@@ -1,6 +1,6 @@
 'use strict';
 
-/* -------I will start soon-----------------------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
 Write a function that finds maximum value in an array
@@ -10,6 +10,11 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  let max = arr.reduce((greater, nums)=>{
+    (nums > greater) ? greater = nums :greater;
+    return greater;
+  },0);
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,6 +33,12 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let myArray = matrix.map(arr1 =>{return arr1.reduce((greater, nums)=>{
+    (nums > greater) ? greater = nums :greater;
+    return greater;
+  },0);
+  });
+  return maxInArray(myArray);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +57,17 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sumArray = matrix.map(arr=>{
+    return arr.reduce((acc,num) => {
+      acc = acc+num;
+      return acc;
+    } ,0);
+  });
+  let sumNum = sumArray.reduce((acc,num) => {
+    acc = acc+num;
+    return acc;
+  } ,0);
+  return sumNum;
 };
 
 
@@ -73,6 +95,18 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  let sumArr=[];
+  sumArr.length = stores[0].length;
+  sumArr.fill(0);
+
+  for (let i =0 ; i< stores.length;i++){
+    for (let j = 0; j < stores[i].length; j++) {
+      sumArr[j]= stores[i][j] + sumArr[j];
+
+    }
+
+  }
+  return sumArr;
 
 };
 
@@ -88,6 +122,16 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  let myArray = [];
+  let i = 0;
+  data.forEach(element => {
+
+    myArray.push({sales:`${element} cookies`,time:hours[i]});
+    i= i + 1;
+
+
+  });
+  return myArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,6 +157,8 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let objArrayOf = arr[2];
+  return objArrayOf.items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
